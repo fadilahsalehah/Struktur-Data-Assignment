@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Tipe Data</h1>
+# <h1 align="center">Laporan Praktikum Modul 2 Array </h1>
 <p align="center">Fadilah Salehah - 2311102164</p>
 
 ## Dasar Teori
@@ -102,137 +102,199 @@ ke " << lokasi << endl;
 Program diatas adalah program komputer yang ditulis dalam bahasa pemrograman tertentu untuk menemukan nilai terbesar (maksimum) di antara elemen-elemen yang ada dalam sebuah array. Tujuan dari program ini adalah untuk mengidentifikasi nilai terbesar dalam kumpulan data yang tersimpan dalam array.
 ## Unguided
 
-### 1. Buatlah program untuk menampilkan Output seperti berikut dengan data yangdiinputkan oleh user!
+### 1. Buatlah program untuk menampilkan Output seperti berikut dengan data yang diinputkan oleh user!
 
 ```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int bilangan;
+
+    // Meminta pengguna untuk memasukkan bilangan bulat
+    cout << "Masukkan bilangan bulat: ";
+    cin >> bilangan;
+
+    // Memeriksa apakah bilangan tersebut genap atau ganjil
+    if (bilangan % 2 == 0) {
+        cout << "Bilangan " << bilangan << " adalah bilangan genap." << endl;
+    } else {
+        cout << "Bilangan " << bilangan << " adalah bilangan ganjil." << endl;
+    }
+
+    return 0;
+}
 
 ```
 #### Output:
-![Screenshot (143)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/cfce3c80-3890-4fa5-9a03-69af492b4af2)
-1.	Program diatas adalah sebuah program c++ yang mendefinisikan dua buah fungsi dan menggunakan tipe data primitif untukmenghitung luas lingkaran.
-   
-a.	Fungsi integer `penjumlahan_164(int angka1_164, int angka2_164)` ini memiliki dua buah parameter berbentuk bilangan bulat, lalu menjumlahkannya dan kemudian mengembalikan hasilnya.
-b.	Fungsi float `float LuasLingkaran_164(float Jarijari_164)` memiliki satu parameter yang berbentuk bilangan pecahan. Dalam fungsi ini memiliki nilai pi yang sudah ditetapkan yaitu 3.24, dan kemudian mengembalikan luas lingkaran berdasarkan rumus pi*jarijari*jarijari.
-c.	Fungsi `main()` ini merupakan fungsi utama dari program ini. Didalamnya mendeklarasikan dan menginisialisasikan variabel   angka1 = 8, angka2 = 4, dan jarijari = 10. Kemudian dilakukan pemanggilan fungsi penjumlahan_164 dengan `angka1` dan `angka2` dan menampilkan output hasilnya. Selanjutnya dilakukan pemanggilan fungsi `LuasLingkaran_dilah164` dengan `jarijari` dan menmapilkan output hasilnya.
-d.	Return 0 pada program menandakan bahwa program telah berakhir dan mengembalikan nilain 0 sebagai tanda bahwa program sudah berjalan dengan baik.
-e.	Output dari program tersebut berupa hasil penjumlahan dua angka dan luas lingkaran dengan jari-jari yang telah ditentukan.
+![Screenshot (150)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/f2335f65-505e-440f-ae64-ad36329f50b4)
 
-Kesimpulan dari Materi Tipe Data Primitif:
-Tipe data primitif seperti integer dan float sangat berguna dalam pemrograman karena mereka menyimpan nilai dasar seperti angka. Dalam pemrograman C++, tipe data primitif memungkinkan kita untuk melakukan operasi matematika dan manipulasi data dengan mudah. Dengan menggunakan tipe data primitif yang sesuai dengan kebutuhan program dapat membantu mengoptimalkan penggunaan memori dan meningkatkan kinerja program. Penting untuk memahami batasan dan perilaku tipe data primitif, seperti rentang nilai yang dapat disimpan dan presisi floating point.
+Program di atas adalah program sederhana dalam bahasa C++ yang bertujuan untuk menentukan apakah sebuah bilangan bulat genap atau ganjil. Berikut adalah parafrase dari penjelasan mengenai fungsi-fungsi utama dari program tersebut:
 
+Meminta Input dari Pengguna:
 
+Program menggunakan cout untuk meminta pengguna memasukkan bilangan bulat.
+Kemudian, program menggunakan cin untuk mengambil input bilangan bulat dari pengguna dan menyimpannya dalam variabel bilangan.
+Mengecek Bilangan Genap atau Ganjil:
+
+Program menggunakan operator modulo % untuk memeriksa sisa bagi bilangan dengan 2.
+Jika hasil sisa bagi adalah 0, maka bilangan tersebut genap. Jika tidak, bilangan tersebut ganjil.
+Menampilkan Output:
+
+Hasil pengecekan (apakah bilangan genap atau ganjil) ditampilkan kepada pengguna melalui cout.
+Return 0:
+
+Program mengakhiri eksekusi dengan return 0 untuk menandakan bahwa program berjalan tanpa masalah.
+Dengan demikian, program tersebut membantu pengguna untuk memahami cara menggunakan conditional statement (if-else) dan operator modulo (%) dalam bahasa pemrograman C++. Program ini memberikan feedback langsung kepada pengguna untuk memberitahu apakah bilangan yang dimasukkan adalah genap atau ganjil.
 
 ### 2. Jelaskan fungsi dari class dan struct secara detail dan berikan contoh programnya
 
 ```C++
 #include <iostream>
-#include <string>
 using namespace std;
+// PROGRAM INPUT ARRAY 3 DIMENSI
+int main()
+{
+// Deklarasi array
+int arr[1][2][2];
+// Input elemen
+for (int x = 0; x < 1; x++)
+{
+for (int y = 0; y < 2; y++)
+{
+for (int z = 0; z < 2; z++)
+{
+cout << "Input Array[" << x << "][" << y << "][" << z <<
 
-// Mendefinisikan struct untuk data mahasiswa
-struct MahasiswaData {
-    string nama_dilah164;
-    string jurusan_dilah164;
-    string NIM_dilah164;
-};
+"] = ";
 
-// Mendefinisikan class Mahasiswa
-class Mahasiswa {
-private:
-    MahasiswaData data; // Objek MahasiswaData sebagai atribut private
-
-public:
-    // Constructor untuk class Mahasiswa
-    Mahasiswa(string nama, string jurusan, string NIM) {
-        data.nama_dilah164 = nama;
-        data.jurusan_dilah164 = jurusan;
-        data.NIM_dilah164= NIM;
-    }
-
-    // Prosedur untuk menampilkan data mahasiswa
-    void tampilkanData() {
-        cout << "Data Mahasiswa" << endl;
-        cout << "Nama : " << data.nama_dilah164 << endl;
-        cout << "NIM : " << data.NIM_dilah164 << endl;
-        cout << "Jurusan : " << data.jurusan_dilah164 << endl;
-    }
-
-    // Metode untuk mengambil data mahasiswa
-    MahasiswaData getData() {
-        return data;
-    }
-
-    // Metode untuk mengatur data mahasiswa
-    void setData(string nama, string jurusan, string NIM) {
-        data.nama_dilah164 = nama;
-        data.jurusan_dilah164 = jurusan;
-        data.NIM_dilah164 = NIM;
-    }
-};
-
-int main() {
-    // Membuat objek mhs dari class Mahasiswa dengan data yang telah ditentukan
-    Mahasiswa mhs("Fadilah Salehah", "Teknik Informatika", "2311102164");
-
-    // Memanggil prosedur tampilkanData untuk menampilkan data mahasiswa pada output
-    mhs.tampilkanData();
-
-    return 0;
+cin >> arr[x][y][z];
 }
+}
+cout << endl;
+}
+// Output Array
+for (int x = 0; x < 1; x++)
+{
+for (int y = 0; y < 2; y++)
+{
+for (int z = 0; z < 2; z++)
+{
+cout << "Data Array[" << x << "][" << y << "][" << z <<
+
+"] = " << arr[x][y][z] << endl;
+}
+}
+}
+cout << endl;
+// Tampilan array
+for (int x = 0; x < 1; x++)
+{
+for (int y = 0; y < 2; y++)
+{
+for (int z = 0; z < 2; z++)
+{
+cout << arr[x][y][z] << ends;
+}
+cout << endl;
+}
+cout << endl;
+}
+}
+
 ```
 #### Output:
-![Screenshot (144)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/3d3ec0c4-41b5-4c7b-95fb-18754955c9f8)
+![Screenshot (148)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/3aba0821-2df5-4863-ab58-882c7e34a942)
 
-Program di atas adalah sebuah program C++ yang mendefinisikan sebuah struct MahasiswaData untuk menyimpan data mahasiswa, termasuk nama, jurusan, dan NIM. Selanjutnya, sebuah class Mahasiswa dibuat untuk merepresentasikan objek mahasiswa yang memiliki atribut data bertipe MahasiswaData. Program ini menggunakan konstruktor untuk inisialisasi data mahasiswa saat objek Mahasiswa dibuat. Metode tampilkanData() digunakan untuk menampilkan data mahasiswa ke layar. Program ini memanfaatkan struktur data untuk menyimpan informasi yang terkait dengan mahasiswa dan menggunakan class untuk mengelola data dan perilaku terkait mahasiswa tersebut.
+Program tersebut adalah sebuah program dalam bahasa C++ yang bertujuan untuk mengizinkan pengguna untuk memasukkan elemen-elemen ke dalam sebuah array tiga dimensi dan menampilkan output dari array tersebut. Berikut adalah parafrase dari penjelasan mengenai fungsi-fungsi utama dari program tersebut:
 
-Struct adalah kumpulandari beberapa variabel dengan beragam tipe data yang dibungkus dalam satu variabel. Struct berfungsi untuk mengelompokkan berbagai jenis tipe data yang berbeda menjadi satu unit. Hal ini dapat memungkinkan programmer dapat membuat jenis data baru yang meliputi sejumlah variabel dengan tipe data yang berbeda.
+Deklarasi dan Input Array:
 
-Class merupakan suatu blueprint atau cetakan untuk mendefinisikan variable dan methode pada seluruh objek tertentu. Class ini memiliki fungsi untuk menampung isi dari program yang akan dijalankan, yang iddalamnya berisi tipe data dan method untuk menjalankan suatu program. Selain itu class berfungsi untuk mengorgnaisir kode menjadi unit yang lebib terstruktur dan class juga memungkinkan untuk pembuatan program yang lebih besar dan kompleks dengan memanfaatkan konsep seperti pewarisan.
+Program pertama-tama membuat sebuah array tiga dimensi dengan ukuran 1x2x2 menggunakan deklarasi int arr[1][2][2];.
+Selanjutnya, program menggunakan nested loop (for) untuk memungkinkan pengguna memasukkan nilai-nilai elemen array. Loop pertama digunakan untuk mengakses dimensi pertama array, loop kedua untuk dimensi kedua, dan loop ketiga untuk dimensi ketiga.
+Pengguna diminta untuk memasukkan nilai-nilai elemen array dalam format Input Array[x][y][z] = nilai.
+Output Array:
 
+Setelah selesai melakukan input, program menggunakan loop yang sama untuk menampilkan output dari array yang telah diinputkan. Loop-loop ini juga digunakan untuk mengakses masing-masing elemen array.
+Tampilan Array:
+
+Program juga menampilkan tampilan array tanpa label dimensinya dengan menggunakan loop yang sama untuk mengakses dan menampilkan nilai-nilai elemen array tanpa label dimensinya.
+Penjelasan Variabel:
+
+arr[1][2][2]: Merupakan array tiga dimensi dengan ukuran 1x2x2 yang digunakan untuk menyimpan elemen-elemen yang dimasukkan oleh pengguna.
+x, y, z: Variabel loop yang digunakan untuk mengakses setiap elemen array dalam loop for.
+Dengan demikian, program tersebut memungkinkan pengguna untuk melakukan operasi input dan output pada data yang disimpan dalam sebuah array tiga dimensi. Program ini juga dapat membantu pengguna memahami konsep array tiga dimensi dan penggunaan loop dalam bahasa pemrograman C++.
 
 
 ### 3. Buat dan jelaskan program menggunakan fungsi map dan jelaskan perbedaan dari array dengan map.
 
 ```C++
-#include <iostream> //Library untuk input-output stream
-#include <map> //Library untuk map
-using namespace std; //namespace std digunakan agar tidka perlu menuliskan std::
+#include <iostream>
+#include <climits> // Untuk menggunakan nilai maksimum dan minimum dari tipe data int
+using namespace std;
 
 int main() {
-    // Membuat map dengan pasangan kunci-nilai bertipe string dan int
-    map<string, int> dataMap_dilah164;
+    int n;
+    cout << "Masukkan jumlah elemen array: ";
+    cin >> n;
 
-    // Memasukkan elemen ke dalam map
-    dataMap_dilah164["John"] = 25;
-    dataMap_dilah164["Alice"] = 30;
-    dataMap_dilah164["Bob"] = 20;
+    // Deklarasi array dengan ukuran yang ditentukan oleh pengguna
+    int arr[n];
 
-    // Mengakses dan mencetak nilai yang terkait dengan kunci tertentu
-    cout << "Umur John: " << dataMap_dilah164["John"] << endl;
-    cout << "Umur Alice: " << dataMap_dilah164["Alice"] << endl;
-    cout << "Umur Bob: " << dataMap_dilah164["Bob"] << endl;
+    // Input nilai-nilai array
+    cout << "Masukkan nilai-nilai array:\n";
+    for (int i = 0; i < n; i++) {
+        cout << "Elemen ke-" << i << ": ";
+        cin >> arr[i];
+    }
+
+    // Menginisialisasi nilai maksimum, minimum, dan total untuk rata-rata
+    int max_val = INT_MIN; // Menggunakan nilai minimum dari tipe int
+    int min_val = INT_MAX; // Menggunakan nilai maksimum dari tipe int
+    int total = 0;
+
+    // Mencari nilai maksimum, minimum, dan menghitung total untuk rata-rata
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > max_val) {
+            max_val = arr[i];
+        }
+        if (arr[i] < min_val) {
+            min_val = arr[i];
+        }
+        total += arr[i];
+    }
+
+    // Menghitung nilai rata-rata
+    float rata_rata = static_cast<float>(total) / n;
+
+    // Menampilkan output
+    cout << "\nNilai Maksimum: " << max_val << endl;
+    cout << "Nilai Minimum: " << min_val << endl;
+    cout << "Nilai Rata-rata: " << rata_rata << endl;
 
     return 0;
 }
 
+
 ```
 #### Output:
-![Screenshot (145)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/1d62d2d2-2286-456b-a423-a6a4f14ddd94)
+![Screenshot (149)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/e7b059e2-451f-43ea-8327-91cb680d02bf)
 
+Program tersebut merupakan program C++ yang bertujuan untuk menghitung nilai maksimum, minimum, dan rata-rata dari sebuah array dengan ukuran yang ditentukan oleh pengguna. Berikut adalah parafrase dari penjelasan mengenai fungsi-fungsi utama dari program tersebut:
 
-Program tersebut merupakan contoh penggunaan map dalam C++, di mana sebuah map dengan pasangan kunci-nilai bertipe string dan int dibuat. Tiga elemen dimasukkan ke dalam map dengan menggunakan kunci bertipe string sebagai nama dan nilai bertipe int sebagai umur. Setelah itu, nilai-nilai yang terkait dengan kunci tertentu diakses dan dicetak ke layar, seperti umur John, Alice, dan Bob. 
-
-Perbeedaan yang dapat dilihat dari array dan map yaitu :
-1.	Array tidak mengizinkan perpindahan elemen, sedangkan map mengizinkan duplikasi key
-2.	Array dapat mengizinkan duplikasi elemen, sedangkan map tidak bisa mengizinkan duplikasi elemen
-3.	Array dapat diteruskan secara otomatis,sedangkan map tidka bisa secara otomatis
-4.	Array lebih efisien dalam penggunaan saat megakses elemen dengan menggunakan indeks, sedangkan map lebih efisien dalam penggunaan ketika mengakses elemen dengan menggunakan key.
-5.	Array ini digunakan untuk menyimpan sekumpulan elemen yang dapat diakses menggunakan indeks, sedangkan map digunakan untuk menyimpan kumpulan key-value pair yang dapat diakses menggunakan key.
+Program akan meminta pengguna untuk memasukkan jumlah elemen array yang diinginkan.
+Setelah itu, program akan mendeklarasikan sebuah array dengan ukuran yang telah diinputkan.
+Pengguna diminta untuk memasukkan nilai-nilai elemen array sesuai dengan ukuran yang telah ditentukan sebelumnya.
+Program akan menginisialisasi variabel max_val dan min_val dengan nilai maksimum dan minimum yang dapat ditampung oleh tipe data int.
+Variabel total diinisialisasi dengan nilai 0 untuk menghitung total elemen array.
+Selanjutnya, program melakukan iterasi melalui seluruh elemen array untuk mencari nilai maksimum, minimum, dan menghitung total elemen array.
+Setelah selesai iterasi, program menghitung nilai rata-rata dengan membagi total nilai dengan jumlah elemen array.
+Terakhir, program menampilkan nilai maksimum, minimum, dan rata-rata dari array yang telah diinputkan oleh pengguna.
+Dengan demikian, program tersebut dapat membantu pengguna untuk melakukan analisis sederhana terhadap data dalam array dengan menghitung nilai maksimum, minimum, dan rata-rata dari nilai-nilai tersebut.
 
 
 ## Kesimpulan
-Dalam penggunaan tipe data c++, penting sekali untuk mengetahui jenis jenis dari tipe data. Pemilihan tipe data yang tepat juga penting untuk membantu seorang progammer dalam mengetahui efisiensi dan keamanan program, serta untuk menghindari kelebihan atau kekurangan dari penggunaan memori.
+Parafrase dari kesimpulan tersebut adalah bahwa program-program yang telah dibuat memberikan contoh konkret tentang bagaimana menggunakan array dalam bahasa pemrograman C++. Program-program tersebut mencakup konsep-konsep dasar seperti input-output, penggunaan variabel, loop untuk melakukan iterasi, operator aritmatika, dan conditional statement untuk membuat keputusan berdasarkan kondisi tertentu.
 
 ## Referensi
-[1] Syahidin, M.M. Mengenal Jenis-jenis Tipe Data dalam Bahasa C++. Jurnal MMS, 2019. <br/>
-[2] Hanief, S., Jepriana, I. W., & Kom, S. (2020). Konsep Algoritme dan Aplikasinya dalam Bahasa Pemrograman C++. Penerbit Andi.<br/>
+www.duniailkom.com/tutorial-belajar-cpp-cara-membuat-array-3-dimensi/
