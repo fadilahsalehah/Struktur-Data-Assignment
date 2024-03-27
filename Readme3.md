@@ -2,171 +2,604 @@
 <p align="center">Fadilah Salehah - 2311102164</p>
 
 ## Dasar Teori
+Dalam Single Linked List, setiap node menyimpan data dan pointer yang menunjuk ke node berikutnya dalam urutan sekuensial. Berikut adalah ilustrasi yang memperbaiki konsep Single Linked List:
+rust
+Copy code
 
+  +-----+        +-----+        +-----+        +-----+
+  |  1  | -----> |  2  | -----> |  3  | -----> |  4  | -----> NULL
+  +-----+        +-----+        +-----+        +-----+
+  | data|        | data|        | data|        | data|
+  | next| -----> | next| -----> | next| -----> | next|
+  +-----+        +-----+        +-----+        +-----+
+  
+Pada ilustrasi di atas, terdapat empat node yang saling terhubung membentuk Single Linked List. Setiap node memiliki dua bagian utama, yaitu data (nilai yang disimpan) dan next (pointer yang menunjukkan ke node berikutnya). Node terakhir memiliki pointer next yang menunjuk ke NULL, menandakan akhir dari Single Linked List.
+Node pertama memiliki data dengan nilai 1 dan next yang menunjuk ke node kedua. Node kedua memiliki data dengan nilai 2 dan next yang menunjuk ke node ketiga. Node ketiga memiliki data dengan nilai 3 dan next yang menunjuk ke node keempat. Node keempat memiliki data dengan nilai 4 dan next yang menunjuk ke NULL.
+Dengan menggunakan struktur seperti ini, Single Linked List memungkinkan penyimpanan dan pengelolaan data dalam urutan sekuensial dengan fleksibilitas yang tinggi, karena node-node dapat ditambahkan atau dihapus secara dinamis.
 
+Double Linked List Circular adalah jenis dari struktur data Linked List di mana setiap node memiliki tiga bidang (field): satu bidang pointer yang menunjuk ke node berikutnya (next), satu bidang pointer yang menunjuk ke node sebelumnya (prev), dan satu bidang untuk menyimpan data yang sesuai untuk node tersebut.
+Pada Double Linked List Circular, pointer next dan prev pada node terakhir di list akan menunjuk kembali ke node pertama, membentuk sebuah lingkaran atau siklus. Hal ini memungkinkan navigasi data dalam kedua arah (maju dan mundur) secara efisien dan dengan mudah, karena setiap node memiliki akses ke node sebelumnya dan node berikutnya.
 
 ## Guided 
 
-### 1. Tipe Data Primitif
+### 1. Latihan single linked list
 
 ```C++
 #include <iostream>
-#include <iomanip>
-
 using namespace std;
 
-int main() {
-    char op;
-    float num1, num2;
-
-    
-    cout << "Enter operator (+, -, *, /): ";
-    cin >> op;
-   
-    cout << "Enter two operands: ";
-    cin>>num1>>num2;
-
-    switch (op) {
-// If user enters +
-    case '+':
-        cout << "Result: " << num1 + num2;
-        break;
-// If user enters -
-    case '-':
-        cout << "Result: " << num1 - num2;
-        break;
-// If user enters *
-    case '*':
-        cout << "Result: " << num1 * num2;
-        break;
-// If user enters /
-    case '/':
-    if (num2 != 0) {
-        cout << "Result: " << fixed << setprecision(2) <<num1 / num2;
-    } else {
-        cout << "Error! Division by zero is not allowed.";
-    }
-    break;
-
-default:
-    cout << "Error! Operator is not correct";
-} 
-return 0;
-}
-
-```
-Program diatas adalah sebuah program penghitungan operasi aritmatika. pengguna diminta untuk memasukkan pilihan (+,-,*,/) dan juga memasukkan 2 bilangan yang akan dihitung.setelah memasukkan pilihan dan juga bilangan maka output akan menampilkan hasil dari operasi bilangan yang dipilih.
-
-### 2. Tipe Data Abstrak
-
-```C++
-#include <stdio.h>
-#include <string.h>
-
-//Struct
-struct Mahasiswa
+/// PROGRAM SINGLE LINKED LIST NON-CIRCULAR
+// Deklarasi Struct Node
+struct Node
 {
-    char name[50];
-    char address[100];
-    int age;
+    // komponen/member
+    int data;
+    Node *next;
 };
+Node *head;
+Node *tail;
+// Inisialisasi Node
+void init()
+{
+    head = NULL;
+    tail = NULL;
+}
+// Pengecekan
+bool isEmpty()
+{
+    if (head == NULL)
+        return true;
+    else
+        return false;
+}
+// Tambah Depan
+void insertDepan(int nilai)
+{
+    // Buat Node baru
+    Node *baru = new Node;
+    baru->data = nilai;
+    baru->next = NULL;
+    if (isEmpty() == true)
+    {
+        head = tail = baru;
+        tail->next = NULL;
+    }
+    else
+    {
+        baru->next = head;
+        head = baru;
+    }
+}
+// Tambah Belakang
+void insertBelakang(int nilai)
+{
+    // Buat Node baru
+    Node *baru = new Node;
+    baru->data = nilai;
+    baru->next = NULL;
+    if (isEmpty() == true)
+    {
+        head = tail = baru;
+        tail->next = NULL;
+    }
+    else
+    {
+        tail->next = baru;
+        tail = baru;
+    }
+}
+// Hitung Jumlah List
+int hitungList()
+{
+    Node *hitung;
+    hitung = head;
+    int jumlah = 0;
+    while (hitung != NULL)
+    {
+        jumlah++;
+        hitung = hitung->next;
+    }
+    return jumlah;
+}
+// Tambah Tengah
+void insertTengah(int data, int posisi)
+{
+    if (posisi < 1 || posisi > hitungList())
+    {
+        cout << "Posisi diluar jangkauan" << endl;
+    }
+    else if (posisi == 1)
+    {
+        cout << "Posisi bukan posisi tengah" << endl;
+    }
+    else
+    {
+        Node *baru, *bantu;
+        baru = new Node();
+        baru->data = data;
+        // tranversing
+        bantu = head;
+        int nomor = 1;
+        while (nomor < posisi - 1)
+        {
+            bantu = bantu->next;
+            nomor++;
+        }
+        baru->next = bantu->next;
+        bantu->next = baru;
+    }
+}
+// Hapus Depan
+void hapusDepan()
+{
+    Node *hapus;
+    if (isEmpty() == false)
+    {
+        if (head->next != NULL)
+        {
+            hapus = head;
+            head = head->next;
+            delete hapus;
+        }
+        else
+        {
+            head = tail = NULL;
+        }
+    }
+    else
+    {
+        cout << "List kosong!" << endl;
+    }
+}
+// Hapus Belakang
+void hapusBelakang()
+{
+    Node *hapus;
+    Node *bantu;
+    if (isEmpty() == false)
+    {
+        if (head != tail)
+        {
+            hapus = tail;
+            bantu = head;
+            while (bantu->next != tail)
+            {
+                bantu = bantu->next;
+            }
+            tail = bantu;
+            tail->next = NULL;
+            delete hapus;
+        }
+        else
+        {
+            head = tail = NULL;
+        }
+    }
+    else
+    {
+        cout << "List kosong!" << endl;
+    }
+}
+// Hapus Tengah
+void hapusTengah(int posisi)
+{
+    Node *hapus, *bantu, *bantu2;
+    if (posisi < 1 || posisi > hitungList())
+    {
+        cout << "Posisi di luar jangkauan" << endl;
+    }
+    else if (posisi == 1)
+    {
+        cout << "Posisi bukan posisi tengah" << endl;
+    }
+    else
+    {
+        int nomor = 1;
+        bantu = head;
+        while (nomor <= posisi)
+        {
+            if (nomor == posisi - 1)
+            {
+                bantu2 = bantu;
+            }
+            if (nomor == posisi)
+            {
+                hapus = bantu;
+            }
+            bantu = bantu->next;
+            nomor++;
+        }
+        bantu2->next = bantu;
+        delete hapus;
+    }
+}
+// Ubah Depan
+void ubahDepan(int data)
+{
+    if (isEmpty() == false)
+    {
+        head->data = data;
+    }
+    else
+    {
+        cout << "List masih kosong!" << endl;
+    }
+}
+// Ubah Tengah
+void ubahTengah(int data, int posisi)
+{
+    Node *bantu;
+    if (isEmpty() == false)
+    {
+        if (posisi < 1 || posisi > hitungList())
+        {
+            cout << "Posisi di luar jangkauan" << endl;
+        }
+        else if (posisi == 1)
+        {
+            cout << "Posisi bukan posisi tengah" << endl;
+        }
+        else
+        {
+            bantu = head;
+            int nomor = 1;
+            while (nomor < posisi)
+            {
+                bantu = bantu->next;
+                nomor++;
+            }
+            bantu->data = data;
+        }
+    }
+    else
+    {
+        cout << "List masih kosong!" << endl;
+    }
+}
+// Ubah Belakang
+void ubahBelakang(int data)
+{
+    if (isEmpty() == false)
+    {
+        tail->data = data;
+    }
+    else
+    {
+        cout << "List masih kosong!" << endl;
+    }
+}
+// Hapus List
+void clearList()
+{
+    Node *bantu, *hapus;
+    bantu = head;
+    while (bantu != NULL)
+    {
+        hapus = bantu;
+        bantu = bantu->next;
+        delete hapus;
+    }
+    head = tail = NULL;
+    cout << "List berhasil terhapus!" << endl;
+}
+// Tampilkan List
+void tampil()
+{
+    Node *bantu;
+    bantu = head;
+    if (isEmpty() == false)
+    {
+        while (bantu != NULL)
+        {
+            cout << bantu->data << ends;
+            bantu = bantu->next;
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << "List masih kosong!" << endl;
+    }
+}
 int main()
 {
-
-// menggunakan struct
-struct Mahasiswa mhs1, mhs2;
-// mengisi nilai ke struct
-strcpy(mhs1.name, "Dian");
-strcpy(mhs1.address, "Mataram");
-mhs1.age = 22;
-strcpy(mhs2.name, "Bambang");
-strcpy(mhs2.address, "Surabaya");
-mhs2.age = 23;
-
-// mencetak isi struct
-printf("## Mahasiswa 1 ##\n");
-printf("Nama: %s\n", mhs1.name);
-printf("Alamat: %s\n", mhs1.address);
-printf("Umur: %d\n", mhs1.age);
-printf ("\n");
-printf("## Mahasiswa 2 ##\n");
-printf("Nama: %s\n", mhs2.name);
-printf("Alamat: %s\n", mhs2.address);
-printf("Umur: %d\n", mhs2.age);
-return 0;
-}
-
-```
-Program diatas adalah sebuah program dengan menggunakan struct ynag berisi informasi data mahasiswa. didalam struct terdapat variabel untuk menyimpan nama, alamat, dan umur. serta dalam program terdapar dua variabel struct yang didefinisikan sebagai mhs1 dan mhs2. dan pada akhirnya program akan menampilkan informasi yang disimpan dalam struct mhs1 dan mhs2.
-
-### 3. Tipe Data Koleksi
-
-```C++
-#include <iostream>
-#include <array>
-using namespace std;
-
-int main() {
-// Deklarasi dan inisialisasi array
-    int nilai[5];
-    nilai[0] = 23;
-    nilai[1] = 50;
-    nilai[2] = 34;
-    nilai[3] = 78;
-    nilai[4] = 90;
-    
-    // Mencetak array dengan tab
-    cout << "Isi array pertama : " << nilai[0] << endl;
-    cout << "Isi array kedua : " << nilai[1] << endl;
-    cout << "Isi array ketiga : " << nilai[2] << endl;
-    cout << "Isi array keempat : " << nilai[3] << endl;
-    cout << "Isi array kelima : " << nilai[4] << endl;
-
+    init();
+    insertDepan(3);
+    tampil();
+    insertBelakang(5);
+    tampil();
+    insertDepan(2);
+    tampil();
+    insertDepan(1);
+    tampil();
+    hapusDepan();
+    tampil();    hapusBelakang();
+    tampil();
+    insertTengah(7, 2);
+    tampil();
+    hapusTengah(2);
+    tampil();
+    ubahDepan(1);
+    tampil();
+    ubahBelakang(8);
+    tampil();
+    ubahTengah(11, 2);
+    tampil();
     return 0;
 }
 
 ```
-Program diatas adlaah program yang menggunakan array. array adalah sebuah wadah dimana kita dapat menyimpan beberapa variabel atau data dalam satu tempat. dalam program diatas kita dapat menyimpan beberapa nilai dalam array yang bernama "nilai" dn menyimpan 5 bilangan yaitu 23, 50, 34, 78, dan 90. kemudian akan ditampilkan pada output.
-## Unguided 
+Fungsi-fungsi ini memungkinkan pengguna untuk mengelola linked list sesuai dengan kebutuhan, baik itu menambahkan, menghapus, mengubah data, atau membersihkan seluruh isi list. Program juga memberikan feedback kepada pengguna jika terjadi kesalahan seperti menambahkan node di posisi yang tidak valid atau mengubah node yang tidak ada. Program berjalan secara interaktif, memberikan menu pilihan kepada pengguna untuk memilih operasi yang ingin dilakukan pada linked list.
 
-### 1. Buatlah program menggunakan tipe data primitif minimal dua fungsi dan bebas. Menampilkan program, jelaskan program tersebut dan ambil kesimpulan dari materi tipe data primitif! 
+### 2. Latihan double linked list
 
 ```C++
 #include <iostream>
 using namespace std;
 
-// Fungsi integer untuk menjumlahkan dua bilangan bulat
-int penjumlahan_dilah164(int angka1_dilah164, int angka2_dilah164) {
-    return angka1_dilah164 + angka2_dilah164;
-}
 
-// Fungsi float untuk menghitung luas lingkaran dengan pi yang merupakan bilangan desimal
-float LuasLingkaran_dilah164(float Jarijari_dilah164) {
-    const float pi = 3.14; // Nilai pi
-    return pi * Jarijari_dilah164 * Jarijari_dilah164; // Rumus luas lingkaran
-}
+class Node {
+    public:int data;
+    Node* prev;
+    Node* next;
+};
+class DoublyLinkedList {
+        public:
+        Node* head;
+        Node* tail;
+        DoublyLinkedList() {
+            head = nullptr;
+            tail = nullptr;
+    }
+    void push(int data) {
+        Node* newNode = new Node;
+        newNode->data = data;
+        newNode->prev = nullptr;
+        newNode->next = head;
+        if (head != nullptr) {
+            head->prev = newNode;
+        } 
+        else {
+            tail = newNode;
+        }
+        head = newNode;
+    }
+    void pop() {
+        if (head == nullptr) {
+            return;
+        }
+        Node* temp = head;
+        head = head->next;
+        if (head != nullptr) {
+            head->prev = nullptr;
+        } 
+        else {
+            tail = nullptr;
+        }
+        delete temp;
+    }
+    bool update(int oldData, int newData) {
+        Node* current = head;while (current != nullptr) {
+            if (current->data == oldData) {
+                current->data = newData;
+                return true;
+            }
+            current = current->next;
+        }
+        return false;
+    }
+    void deleteAll() {
+        Node* current = head;
+        while (current != nullptr) {
+            Node* temp = current;
+            current = current->next;
+            delete temp;
+        }
+        head = nullptr;
+        tail = nullptr;
+    }
+    void display() {
+        Node* current = head;
+        while (current != nullptr) {
+            cout << current->data << " ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+};
+
 
 int main() {
-    // Deklarasi dan inisialisasi variabel
-    int angka1 = 8, angka2 = 4;
-    float jarijari = 10;
-
-    //output nama, nim, dan kelas
-    cout << "Nama  : Fadilah Salehah" << endl;
-    cout << "NIM   : 2311102164" << endl;
-    cout << "Kelas : IF-11-E" << endl;
-    cout << endl;
-
-    // Memanggil fungsi tambah dan menampilkan output hasil penjumlahan
-    cout << "Hasil penjumlahan: " << penjumlahan_dilah164(angka1, angka2) << endl;
-
-    // Memanggil fungsi LuasLingkaran dan menampilkan output hasil luas lingkaran
-    cout << "Luas lingkaran adalah: " << LuasLingkaran_dilah164(jarijari) << endl;
+    DoublyLinkedList list;
+    while (true) {
+        cout << "1. Add data" << endl;
+        cout << "2. Delete data" << endl;
+        cout << "3. Update data" << endl;
+        cout << "4. Clear data" << endl;
+        cout << "5. Display data" << endl;
+        cout << "6. Exit" << endl;int choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1: {
+                int data;
+                cout << "Enter data to add: ";
+                cin >> data;
+                list.push(data);
+                break;
+            }
+            case 2: {
+                list.pop();
+                break;
+            }
+            case 3: {
+                int oldData, newData;
+                cout << "Enter old data: ";
+                cin >> oldData;
+                cout << "Enter new data: ";
+                cin >> newData;
+                bool updated = list.update(oldData, newData);
+                if (!updated) {
+                    cout << "Data not found" << endl;
+                }
+                break;
+            }
+            case 4: {
+                list.deleteAll();
+                break;
+            }
+            case 5: {
+                list.display();
+                break;
+            }
+            case 6: {
+                return 0;
+            }
+            default: {
+                cout << "Invalid choice" << endl;
+                break;
+            }
+        }
+    }
     return 0;
 }
+```
+Kode yang Anda berikan adalah implementasi dari sebuah program yang menggunakan Double Linked List untuk mengelola data. Program ini memberikan menu interaktif kepada pengguna untuk melakukan operasi-operasi dasar pada Double Linked List, seperti menambah data, menghapus data, mengubah data, membersihkan seluruh data, dan menampilkan data.
+
+## Unguided
+### 1. Soal mengenai Single Linked List 
+Buatlah program menu Single Linked List Non-Circular untuk menyimpan Nama dan usia mahasiswa, dengan menggunakan inputan dari user. Lakukan operasi berikut: 
+
+```C++
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    string nama;
+    int usia;
+    Node* next;
+
+    Node(string nama, int usia) {
+        this->nama = nama;
+        this->usia = usia;
+        next = nullptr;
+    }
+};
+
+class LinkedList {
+private:
+    Node* head;
+
+public:
+    LinkedList() {
+        head = nullptr;
+    }
+
+    void tambahDepan(string nama, int usia) {
+        Node* new_node = new Node(nama, usia);
+        new_node->next = head;
+        head = new_node;
+    }
+
+    void tambahBelakang(string nama, int usia) {
+        Node* new_node = new Node(nama, usia);
+        if (head == nullptr) {
+            head = new_node;
+            return;
+        }
+        Node* last = head;
+        while (last->next != nullptr) {
+            last = last->next;
+        }
+        last->next = new_node;
+    }
+
+    void tambahTengah(Node* posisi, string nama, int usia) {
+        if (posisi == nullptr) {
+            cout << "Posisi tidak valid" << endl;
+            return;
+        }
+        Node* new_node = new Node(nama, usia);
+        new_node->next = posisi->next;
+        posisi->next = new_node;
+    }
+
+    void hapus(string targetNama) {
+        Node* current = head;
+        Node* prev = nullptr;
+
+        while (current != nullptr && current->nama != targetNama) {
+            prev = current;
+            current = current->next;
+        }
+
+        if (current == nullptr) {
+            cout << "Data tidak ditemukan" << endl;
+            return;
+        }
+
+        if (prev == nullptr) {
+            head = current->next;
+        } else {
+            prev->next = current->next;
+        }
+
+        delete current;
+    }
+
+    void tampilkanData() {
+        Node* current = head;
+        while (current != nullptr) {
+            cout << current->nama << " " << current->usia << endl;
+            current = current->next;
+        }
+    }
+};
+
+int main() {
+    LinkedList linkedList;
+
+    // Menambahkan data sesuai urutan
+    linkedList.tambahBelakang("John", 19);
+    linkedList.tambahBelakang("Jane", 20);
+    linkedList.tambahBelakang("Michael", 18);
+    linkedList.tambahBelakang("Yusuke", 19);
+    linkedList.tambahBelakang("Akechi", 20);
+    linkedList.tambahBelakang("Hoshino", 18);
+    linkedList.tambahBelakang("Karin", 18);
+
+    // Menghapus data Akechi
+    linkedList.hapus("Akechi");
+
+    // Menambahkan data Futaba di antara John dan Jane
+    Node* current = linkedList.head;
+    while (current != nullptr && current->nama != "John") {
+        current = current->next;
+    }
+    linkedList.tambahTengah(current, "Futaba", 18);
+
+    // Menambahkan data Igor di awal
+    linkedList.tambahDepan("Igor", 20);
+
+    // Mengubah data Michael menjadi Reyn
+    current = linkedList.head;
+    while (current != nullptr && current->nama != "Michael") {
+        current = current->next;
+    }
+    if (current != nullptr) {
+        current->nama = "Reyn";
+    }
+
+    // Menampilkan seluruh data
+    linkedList.tampilkanData();
+
+    return 0;
+}
+
 ```
 #### Output:
-![Screenshot (143)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/cfce3c80-3890-4fa5-9a03-69af492b4af2)
+
 1.	Program diatas adalah sebuah program c++ yang mendefinisikan dua buah fungsi dan menggunakan tipe data primitif untukmenghitung luas lingkaran.
    
 a.	Fungsi integer `penjumlahan_164(int angka1_164, int angka2_164)` ini memiliki dua buah parameter berbentuk bilangan bulat, lalu menjumlahkannya dan kemudian mengembalikan hasilnya.
