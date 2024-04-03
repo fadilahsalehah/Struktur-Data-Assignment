@@ -913,8 +913,7 @@ int main(){
 ```
 #### Output:
 ![unguided-1](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/af68beae-5413-47ec-9285-eebd192596cf)
-![unguided-1(2)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/b98403cd-da48-4e49-a167-05a882a5f9cb)
-![unguided-1(3)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/5d900e25-5293-42a1-ad2f-b16f4de927c6)
+![unguided-1-2](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/6fcb74aa-9f06-4cbe-b991-19924630dd00)
 
 
 Program di atas merupakan program c++ yang mengimplementasikan Linked list.  Pertama, program mendefinisikan struktur Node yang memiliki dua string nama_158 dan nim_158 sebagai data, serta pointer next yang menunjuk ke simpul berikutnya. Selain itu, program juga menginisialisasi head dan tail menjadi NULL dalam fungsi init(). Kemudian Fungsi isEmpty() digunakan untuk memeriksa apakah linked list kosong. Fungsi-fungsi lainnya seperti tambahDepan(), tambahBelakang(), dan tambahTengah() pada program diatas bertujuan untuk menambahkan simpul baru ke linked list dengan data yang sesuai. Sedangkan fungsi-fungsi penghapusan seperti hapusDepan(), hapusBelakang(), dan hapusTengah() pada program tersebut digunakan untuk menghapus simpul dari linked list. Program diatas  juga menyediakan fungsi-fungsi untuk mengubah data pada simpul tertentu dalam linked list, yaitu ubahDepan(), ubahBelakang(), dan ubahTengah(). Kemudian Fungsi hitungList() digunakan untuk menghitung jumlah simpul dalam linked list. Selanjutnya  Dalam fungsi main(), program menampilkan menu pilihan operasi yang dapat dilakukan kepada pengguna. Pengguna dapat memilih untuk menambah, menghapus, mengubah, atau menampilkan data pada linked list. Loop do-while menjalankan program hingga pengguna memilih untuk keluar dengan menetapkan operasi = 0.
