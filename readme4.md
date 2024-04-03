@@ -1,5 +1,5 @@
 # <h1 align="center">Laporan Praktikum Modul Linked List Circular dan Non-Circular </h1>
-<p align="center">Shafa adila Santoso - 2311102158</p>
+<p align="center">Fadilah Salehah - 2311102164</p>
 
 ## Dasar Teori
 
@@ -572,8 +572,8 @@ using namespace std;
 // Deklarasi struct Node untuk menyimpan informasi nama dan NIM mahasiswa
 struct Node
 {
-    string nama_158; // variabel untuk menyimpan nama mahasiswa
-    string nim_158; // variabel untuk menyimpan NIM mahasiswa
+    string nama_164; // variabel untuk menyimpan nama mahasiswa
+    string nim_164; // variabel untuk menyimpan NIM mahasiswa
     Node *next; // pointer yang menunjuk ke Node selanjutnya dalam linked list
 };
 
@@ -595,8 +595,8 @@ bool isEmpty(){
 // fungsi tambah depan
 void tambahDepan(string nama, string nim){
     Node *baru = new Node; // buat node baru
-    baru->nama_158 = nama; // isi data nama pada node baru
-    baru->nim_158 = nim; // isi data nim pada node baru
+    baru->nama_164 = nama; // isi data nama pada node baru
+    baru->nim_164 = nim; // isi data nim pada node baru
     baru->next = NULL;
 
     if (isEmpty()) // jika list kosong
@@ -613,8 +613,9 @@ void tambahDepan(string nama, string nim){
 // tambah Belakang
 void tambahBelakang(string nama, string nim){
     Node *baru = new Node; // buat node baru
-    baru->nama_158 = nama; // isi data nama pada node baru
-    baru->nim_158 = nim; // isi data nim pada node baru
+    baru->nama_164 = nama; // isi data nama pada node baru
+    baru->nim_164
+= nim; // isi data nim pada node baru
     baru->next = NULL;
 
     if (isEmpty()){ // jika list kosong
@@ -645,8 +646,8 @@ void tambahTengah(string nama, string nim, int posisi){
         cout << "Posisi bukan posisi tengah" << endl;
     }else {
         Node *baru = new Node; // Buat Node baru
-        baru->nama_158 = nama; // Isi data nama pada Node baru
-        baru->nim_158 = nim; // Isi data nim pada Node baru
+        baru->nama_164 = nama; // Isi data nama pada Node baru
+        baru->nim_164 = nim; // Isi data nim pada Node baru
 
         Node *bantu = head;
         for (int i = 1; i < posisi - 1; i++){
@@ -707,7 +708,8 @@ void hapusTengah(int posisi){
         Node *hapus;
         if (posisi == 1){
             hapus = head;
-            head = head->next;
+            head = 
+head->next;
         }else {
             Node *bantu = head; // Variabel bantu untuk traverse list
             for (int i = 1; i < posisi - 1; i++){
@@ -723,8 +725,8 @@ void hapusTengah(int posisi){
 
 void ubahDepan(string nama, string nim){
     if (!isEmpty()){ // Cek apakah list tidak kosong
-        head->nama_158 = nama; // Ubah data pada node pertama
-        head->nim_158 = nim;
+        head->nama_164 = nama; // Ubah data pada node pertama
+        head->nim_164 = nim;
     }else {
         cout << "List masih kosong!" << endl;
     }
@@ -732,8 +734,8 @@ void ubahDepan(string nama, string nim){
 
 void ubahBelakang(string nama, string nim){
     if (!isEmpty()){ // Cek apakah list tidak kosong
-        tail->nama_158 = nama; // Ubah data pada node terakhir
-        tail->nim_158 = nim;
+        tail->nama_164 = nama; // Ubah data pada node terakhir
+        tail->nim_164 = nim;
     }else {
         cout << "List masih kosong!" << endl;
     }
@@ -755,8 +757,8 @@ void ubahTengah(string nama, string nim, int posisi){
                     bantu = bantu->next;
                     nomor++;
                 }
-            bantu->nama_158 = nama; // Ubah data pada node yang ditemukan
-            bantu->nim_158 = nim;
+            bantu->nama_164 = nama; // Ubah data pada node yang ditemukan
+            bantu->nim_164 = nim;
         }
     }else {
         cout << "List masih kosong!" << endl;
@@ -783,7 +785,7 @@ void tampilkan(){
         cout << "------------------------------" << endl;
         Node *bantu = head;
             while (bantu != NULL){
-                cout << "| " << setw(15) << left << bantu->nama_158  << "| " << setw(9) << left << bantu->nim_158 << " |" << endl;
+                cout << "| " << setw(15) << left << bantu->nama_164  << "| " << setw(9) << left << bantu->nim_164 << " |" << endl;
                 bantu = bantu->next; // Geser ke node berikutnya
             }
         cout << "------------------------------" << endl;
@@ -910,9 +912,10 @@ int main(){
 }
 ```
 #### Output:
-![unguided1](Unguided1(1).png)
-![unguided1](Unguided1(2).png)
-![unguided1](Unguided1(3).png)
+![unguided-1](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/af68beae-5413-47ec-9285-eebd192596cf)
+![unguided-1(2)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/b98403cd-da48-4e49-a167-05a882a5f9cb)
+![unguided-1(3)](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/5d900e25-5293-42a1-ad2f-b16f4de927c6)
+
 
 Program di atas merupakan program c++ yang mengimplementasikan Linked list.  Pertama, program mendefinisikan struktur Node yang memiliki dua string nama_158 dan nim_158 sebagai data, serta pointer next yang menunjuk ke simpul berikutnya. Selain itu, program juga menginisialisasi head dan tail menjadi NULL dalam fungsi init(). Kemudian Fungsi isEmpty() digunakan untuk memeriksa apakah linked list kosong. Fungsi-fungsi lainnya seperti tambahDepan(), tambahBelakang(), dan tambahTengah() pada program diatas bertujuan untuk menambahkan simpul baru ke linked list dengan data yang sesuai. Sedangkan fungsi-fungsi penghapusan seperti hapusDepan(), hapusBelakang(), dan hapusTengah() pada program tersebut digunakan untuk menghapus simpul dari linked list. Program diatas  juga menyediakan fungsi-fungsi untuk mengubah data pada simpul tertentu dalam linked list, yaitu ubahDepan(), ubahBelakang(), dan ubahTengah(). Kemudian Fungsi hitungList() digunakan untuk menghitung jumlah simpul dalam linked list. Selanjutnya  Dalam fungsi main(), program menampilkan menu pilihan operasi yang dapat dilakukan kepada pengguna. Pengguna dapat memilih untuk menambah, menghapus, mengubah, atau menampilkan data pada linked list. Loop do-while menjalankan program hingga pengguna memilih untuk keluar dengan menetapkan operasi = 0.
 
