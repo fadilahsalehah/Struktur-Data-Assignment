@@ -1,5 +1,5 @@
 # <h1 align="center">Laporan Praktikum Modul Hash Table</h1>
-<p align="center">Shafa Adila Santoso - 2311102158</p>
+<p align="center">Fadilah Salehah - 2311102164</p>
 
 ## Dasar Teori
 
@@ -312,8 +312,8 @@ using namespace std; // Menggunakan namespace std untuk menghindari penulisan st
 
 // Struktur data untuk menyimpan informasi mahasiswa
 struct Mahasiswa {
-    string NIM_158;
-    int nilai_158;
+    string NIM_164;
+    int nilai_164;
 };
 
 // Class untuk hash table
@@ -336,8 +336,8 @@ public:
     void tambahData(string NIM, int nilai) { 
         int index = hashFunction(NIM); // Menggunakan fungsi hash untuk mendapatkan indeks tabel
         Mahasiswa mhs; // Membuat objek Mahasiswa untuk menyimpan data
-        mhs.NIM_158 = NIM;// Menyimpan NIM dalam objek Mahasiswa
-        mhs.nilai_158 = nilai; // Menyimpan nilai dalam objek Mahasiswa
+        mhs.NIM_164 = NIM;// Menyimpan NIM dalam objek Mahasiswa
+        mhs.nilai_164 = nilai; // Menyimpan nilai dalam objek Mahasiswa
         table[index].push_back(mhs); // Memasukkan objek Mahasiswa ke dalam tabel pada indeks yang sesuai
     }
 
@@ -345,7 +345,7 @@ public:
     void hapusData(string NIM) {
         int index = hashFunction(NIM); // Menggunakan fungsi hash untuk mendapatkan indeks dalam tabel hash
         for (auto it = table[index].begin(); it != table[index].end(); ++it) { // Iterasi melalui semua elemen pada slot indeks yang didapat
-            if (it->NIM_158 == NIM) { 
+            if (it->NIM_164 == NIM) { 
                 table[index].erase(it); // Jika cocok, hapus elemen dari tabel hash dan keluar dari loop
                 break;
             }
@@ -357,9 +357,9 @@ public:
         int index = hashFunction(NIM);  // Calculate the index using a hash function
         bool found = false; // Flag to track if the student with the given NIM is found
         for (auto& mhs : table[index]) { // Iterate through the linked list at the calculated index
-            if (mhs.NIM_158 == NIM) { // Check if the NIM of the current student matches the given NIM
-                cout << "NIM: " << mhs.NIM_158 << endl; 
-                cout << "Nilai: " << mhs.nilai_158 << endl;
+            if (mhs.NIM_164 == NIM) { // Check if the NIM of the current student matches the given NIM
+                cout << "NIM: " << mhs.NIM_164 << endl; 
+                cout << "Nilai: " << mhs.nilai_164 << endl;
                 found = true; // Set found flag to true and exit the loop
                 break;
             }
@@ -373,9 +373,9 @@ public:
     void caridataNilai(int nilai) {
         for (int i = 0; i < tableSize; ++i) {  // Iterasi melalui setiap elemen dalam array table
             for (auto& mhs : table[i]) { // Iterasi melalui setiap mahasiswa dalam table[i]
-                if (mhs.nilai_158 == nilai) { // Memeriksa apakah nilai mahasiswa sama dengan nilai yang diberikan
-                    cout << "NIM: " << mhs.NIM_158 << endl; //mencetak NIM mahasiswa ke layar
-                    cout << "Nilai: " << mhs.nilai_158 << endl; //mencetak nilai mahasiswa ke layar
+                if (mhs.nilai_164 == nilai) { // Memeriksa apakah nilai mahasiswa sama dengan nilai yang diberikan
+                    cout << "NIM: " << mhs.NIM_164 << endl; //mencetak NIM mahasiswa ke layar
+                    cout << "Nilai: " << mhs.nilai_164 << endl; //mencetak nilai mahasiswa ke layar
                 }
             }
         }
@@ -445,10 +445,12 @@ int main() {
 
 ```
 #### Output:
-![unguided1](Unguided1(1).png)
-![unguided1](Unguided1(2).png)
+![unguidedbagian1](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/628957a8-4ec0-48d8-8eca-9fb01a6b4165)
+![unguidedbagian2](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/040bbfbc-372b-42df-993f-513b5615073f)
 
-Program di atas merupakan program C++ yang mengimplementasikan struktur data hash table. Program ini memungkinkan pengguna untuk menambah, menghapus, dan mencari data mahasiswa berdasarkan Nomor Induk Mahasiswa (NIM) atau nilai mereka. Pada awalnya, program mendefinisikan struktur data Mahasiswa yang memiliki dua atribut: NIM_158 dan nilai_158. Selanjutnya, program mendefinisikan kelas HashTable yang memiliki tabel hash sebagai anggota privatnya. Setiap elemen dalam tabel hash merupakan daftar terkait (list) yang dapat menyimpan objek Mahasiswa. Kelas HashTable juga memiliki beberapa metode, termasuk untuk menambah, menghapus, dan mencari data mahasiswa berdasarkan NIM atau nilai mereka. Kemudian di dalam fungsi main(), program memberikan menu kepada pengguna untuk memilih operasi yang ingin dilakukan. Pengguna dapat memilih untuk menambahkan data mahasiswa, menghapus data mahasiswa, mencari data mahasiswa berdasarkan NIM, mencari data mahasiswa berdasarkan nilai, atau keluar dari program. Setiap pilihan memicu eksekusi fungsi yang sesuai dalam kelas HashTable. Program akan terus berjalan hingga pengguna memilih untuk keluar dengan memilih opsi nomor 5.
+
+
+Program di atas merupakan program C++ yang mengimplementasikan struktur data hash table. Program ini memungkinkan pengguna untuk menambah, menghapus, dan mencari data mahasiswa berdasarkan Nomor Induk Mahasiswa (NIM) atau nilai mereka. Pada awalnya, program mendefinisikan struktur data Mahasiswa yang memiliki dua atribut: NIM_164 dan nilai_164. Selanjutnya, program mendefinisikan kelas HashTable yang memiliki tabel hash sebagai anggota privatnya. Setiap elemen dalam tabel hash merupakan daftar terkait (list) yang dapat menyimpan objek Mahasiswa. Kelas HashTable juga memiliki beberapa metode, termasuk untuk menambah, menghapus, dan mencari data mahasiswa berdasarkan NIM atau nilai mereka. Kemudian di dalam fungsi main(), program memberikan menu kepada pengguna untuk memilih operasi yang ingin dilakukan. Pengguna dapat memilih untuk menambahkan data mahasiswa, menghapus data mahasiswa, mencari data mahasiswa berdasarkan NIM, mencari data mahasiswa berdasarkan nilai, atau keluar dari program. Setiap pilihan memicu eksekusi fungsi yang sesuai dalam kelas HashTable. Program akan terus berjalan hingga pengguna memilih untuk keluar dengan memilih opsi nomor 5.
 
 
 ## Kesimpulan
