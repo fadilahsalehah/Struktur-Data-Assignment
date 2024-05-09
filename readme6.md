@@ -222,7 +222,7 @@ int main() {
 }
 ```
 #### Output:
-
+![Umguidedke-1](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/ff20ceaf-b0f3-4d89-bc94-045d372c5c3a)
 
 Program diatas adalah sebuah program c++ yang mengimplementasikan stack. Program tersebut dibuat untuk menentukan apakah sebuah kalimat yang diinputkan oleh pengguna adalah palindrom atau bukan. Program ini tiga buah fungsi. Yang pertama yaitu fungsi “Katadibalik_158” yang berfungsi untuk membersihkan input kalimat dari spasi dan mengubah semua huruf menjadi huruf kecil dengan tujuan untuk mempermudah pembandingan karakter. Fungsi ini berjalan dengan mengiterasi setiap karakter dari tiap input kalimat yang mana jika arakter tersebut huruf, maka karakter tersebut akan diubah menjadi huruf kecil dan kemudian ditambhakan kedalam string hasil. Untuk fungsi kedua adalah “polindrome”, fungsi ini bertugas untuk mengecek apakah string adlah polindrom atau bukan. Untuk mengeceknya, string dibagi menjadi dua lalu setengah pertama karakter dimasukkan ke dalam stack. Jika panjang string ganjil, karakter tengah dilewati saat pembandingan. Setelah itu karakter dari setengah kedua dibandingkan dengan karakter drai stack. Jika ada perbedaan maka string tersebut bukan polindrom tetapi jika seluruh karakter cocok dan stack kosong maka string tersebut adalah polindrom. Fungsi terakhir adlah fungsi “main()”. Dalam fungsi ini pengguna diminta untuk menginputkan minimal 3 kalimat yang kmudian akan diproses oleh fungsi “katadibalik_158()”. Hasilnya kemudian diperika menggunakan dungsi “polindrome()” untuk mengetahui kalimat tersebut polindrom atau bukan. Kemudian hasilnya kan ditampilkan pada output.
 
@@ -309,6 +309,7 @@ int main() {
 }
 ```
 #### Output:
+![Unguidedke-2](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/15ed4cfe-3516-4f45-89bd-d560e3750bf3)
 
 
 Program diatas adalah program sederhana C++ yang mengimplementasikan stack. Pada awal program, progream meminta pengguna untuk menginputkan kalimat dengan minimal 3 buah kata. Setelah diinputkan, program akan membagi kalimat menjadi kata kata dengan mmeproses tiap karakter satu persatu menggunakan fungsi “Katadibalik_158’. Fungsi ini menerima sebuah string sebagai argumen dan membalikkan setiap karakter di dalamnya. Hal ini dilakukan dengan menggunakan stack. Setiap karakter dari kata dimasukkan ke dalam stack, kemudian karakter-karakter tersebut diambil dari stack secara berurutan untuk membentuk kata terbalik. Hasil dari pembalikan kata kemudian dikembalikan sebagai string. Setelah setiap kata dalam kalimat awal dibalikkan, hasilnya digabungkan kembali menjadi sebuah kalimat baru. Hasil akhir dari program adalah kalimat yang setiap katanya telah dibalikkan. Kemudian, program menampilkan hasil balikan kata-kata kepada pengguna.
