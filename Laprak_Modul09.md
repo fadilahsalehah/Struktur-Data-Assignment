@@ -501,7 +501,7 @@ int main() {
     cin >> jmlSimpul_2311102164;
 
     // Mendeklarasikan vektor untuk menyimpan nama simpul
-    vector<string> namaSimpul_2311102158(jmlSimpul_2311102158);
+    vector<string> namaSimpul_2311102164(jmlSimpul_2311102164);
     cout << "Silakan masukan nama simpul" << endl;
     // Meminta pengguna untuk memasukkan nama-nama simpul
     for(int i = 0; i < jmlSimpul_2311102164; ++i) {
@@ -515,7 +515,7 @@ int main() {
     // Meminta pengguna untuk memasukkan bobot antar simpul
     cout << "Silakan masukkan bobot antar simpul" << endl;
     for(int i = 0; i < jmlSimpul_2311102164; ++i) {
-        for(int j = 0; j < jmlSimpul_2311102158; ++j) {
+        for(int j = 0; j < jmlSimpul_2311102164; ++j) {
             cout << namaSimpul_2311102164[i] << "--> " << namaSimpul_2311102164[j] << " = ";
             cin >> matriksBobot[i][j];
         }
@@ -540,7 +540,7 @@ int main() {
 }
 ```
 #### Output:
-
+![u1m9](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/3d47797f-d9d9-466a-8b18-a85f7b97d583)
 
 Program di atas adalah sebuah program C++ sederhana yang meminta pengguna untuk memberikan informasi tentang jumlah simpul, nama-nama simpul, dan bobot antar simpul dalam sebuah graf. Pertama, program meminta pengguna untuk memasukkan jumlah simpul yang akan dimasukkan. Selanjutnya, program meminta pengguna untuk memasukkan nama-nama simpul tersebut satu per satu. Setelah itu, program meminta pengguna untuk memasukkan bobot antar simpul dan menyimpan informasi bobot tersebut dalam sebuah matriks. Terakhir, program menampilkan matriks bobot tersebut dalam bentuk tabel, dengan nama simpul sebagai header baris dan kolom, serta bobot antar simpul sebagai isi dari matriks.
 
@@ -595,7 +595,7 @@ Pohon* insertLeft(char data, Pohon* node) {
         return NULL;
     } else {
         if (node->left != NULL) {
-            cout << "\nNode " << node->data_2311102158 << " sudah memiliki child kiri!" << endl;
+            cout << "\nNode " << node->data_2311102164 << " sudah memiliki child kiri!" << endl;
             return NULL;
         } else {
             // Buat node baru dan hubungkan sebagai child kiri
@@ -850,7 +850,7 @@ int main() {
             case 4:
                 cout << "Masukkan data node yang akan di-update: ";
                 cin >> ParentData_2311102164;
-                node = searchNode(root, ParentData_23111021);
+                node = searchNode(root, ParentData_2311102164);
                 if (node) {
                     cout << "Masukkan data baru: ";
                     cin >> data_2311102164;
@@ -924,26 +924,27 @@ int main() {
 }
 ```
 #### Output:
-![Unguided2](Unguided2(1).png)
-![Unguided2](Unguided2(2).png)
-![Unguided2](Unguided2(3).png)
-![Unguided2](Unguided2(4).png)
-![Unguided2](Unguided2(5).png)
-![Unguided2](Unguided2(6).png)
-![Unguided2](Unguided2(7).png)
-![Unguided2](Unguided2(8).png)
-![Unguided2](Unguided2(9).png)
-![Unguided2](Unguided2(10).png)
-![Unguided2](Unguided2(11).png)
-![Unguided2](Unguided2(12).png)
-![Unguided2](Unguided2(13).png)
-![Unguided2](Unguided2(14).png)
-![Unguided2](Unguided2(15).png)
-![Unguided2](Unguided2(16).png)
-![Unguided2](Unguided2(17).png)
-![Unguided2](Unguided2(18).png)
-![Unguided2](Unguided2(19).png)
-![Unguided2](Unguided2(20).png)
+![u2m9](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/bf622c1f-bc4d-4bc9-9e7b-3a2ac18539a9)
+![u2m9 2](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/d0b3edc0-c97e-427c-9685-8844d161e9db)
+![u2m9 3](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/abf9f38f-9b1a-4f3d-b5b7-d1ee56d839f2)
+![u2m9 4](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/4553a61b-64ff-40f8-b371-388f55206f7b)
+![u2m9 5](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/d9dc81ea-2c5c-471e-b78e-fcc7e99d085e)
+![u2m9 6](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/64fffd12-9c86-416a-af7e-c34091c01c27)
+![u2m9 7](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/f0b426c3-41db-450a-a99c-5647e9ab904e)
+![u2m9 8](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/d78cb5a7-17b7-4e06-8201-ef031db46fbb)
+![u2m9 9](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/9e0daddb-9602-4159-9bcc-dcdc050e98ed)
+![u2m9 10](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/569e4c74-25fc-463f-bde4-7a4199f4f435)
+![u2m9 11](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/8a6cf807-4a38-4938-b254-0f4ff2793ebd)
+![u2m9 12](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/5cc664da-9f59-4813-af40-5c224de405f7)
+![u2m9 13](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/6da86546-6296-44a4-a7fb-2ad91272fe27)
+![u2m9 14](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/1b2b3a6c-b64b-46e6-a333-55f73de38a92)
+![u2m9 15](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/ffb723a5-7ae7-4a1d-9198-a07c610ae4af)
+![u2m9 16](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/dd5c81cd-b445-4df0-bd9e-bc287ea0b3d8)
+![u2m9 17](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/2819b786-85cb-468e-bb94-0a68b8d1492f)
+![u2m9 18](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/93cafe50-8d9a-4f86-8ffb-9963dade38af)
+![u2m9 20](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/024a4de4-9b06-4a30-a6db-2881ac1193ce)
+![u2m9 21](https://github.com/fadilahsalehah/Struktur-Data-Assignment/assets/162522335/2f7686b8-d062-4b8d-b6ac-a353d4ac5fd6)
+
 
 Program diatas merupakan program c++ yang mengimplementasikan dari penggunaan Tree. Program tersebut memanfaatkan struktur data dan berbagai fungsi untuk melakukan berbagai operasi pada pohon biner, seperti membuat node baru, menambahkan child (baik kiri maupun kanan), mengupdate data node, melakukan pencarian node, serta melakukan penelusuran (traversal) preOrder, inOrder, dan postOrder. Pertama-tama, program mendefinisikan sebuah struktur data `Pohon` yang merepresentasikan node pada pohon. Setiap node memiliki data yang disimpan (`data_2311102158`), serta pointer yang menunjukkan ke child kiri (`left`), child kanan (`right`), dan parent (`parent`). Selain itu, program juga mendeklarasikan variabel global `root` yang digunakan untuk menyimpan pointer ke root dari pohon, serta sebuah fungsi `init()` untuk menginisialisasi pohon dengan mengatur `root` menjadi `NULL`. Selanjutnya, program menyediakan fungsi-fungsi dasar untuk manipulasi pohon, seperti `isEmpty()` untuk memeriksa apakah pohon kosong, `buatNode()` untuk membuat node baru sebagai root jika pohon masih kosong, `insertLeft()` dan `insertRight()` untuk menambahkan node di sebelah kiri atau kanan suatu node, dan lain sebagainya. Terdapat pula fungsi-fungsi untuk penelusuran (traversal) pohon, seperti `preOrder()`, `inOrder()`, dan `postOrder()`, yang masing-masing melakukan penelusuran preOrder, inOrder, dan postOrder pada pohon, dimulai dari root dan menelusuri ke child kiri dan kanan. Selain itu, program juga menyediakan fungsi-fungsi tambahan seperti `tampilkanChild()` untuk menampilkan child dari suatu node, `tampilkanDescendants()` untuk menampilkan descendant dari suatu node, serta `searchNode()` untuk mencari node berdasarkan data. Fungsi `size()`, `totalNodeValue()`, dan `height()` digunakan untuk menghitung ukuran (jumlah node), total nilai node, dan tinggi pohon secara berturut-turut. Terakhir, terdapat fungsi `characteristic()` yang menampilkan karakteristik pohon seperti ukuran, tinggi, dan rata-rata node. Fungsi utama `main()` memulai program dengan menampilkan menu pilihan operasi yang dapat dilakukan pada pohon. Setiap pilihan akan memanggil fungsi yang sesuai sesuai dengan kebutuhan pengguna, dan program akan berjalan dalam loop hingga pengguna memilih untuk keluar.
 
